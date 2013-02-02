@@ -124,8 +124,17 @@
 #define CONFIG_BOOTP_SUBNETMASK
 
 #define CONFIG_BOOTDELAY	2
+/*
 #define CONFIG_BOOTARGS		"root=/dev/nfs mem=128M ip=dhcp "\
 				"netdev=25,0,0xf1010000,0xf1010010,eth0"
+*/
+#define CONFIG_BOOTARGS         "console=ttyAMA0 mem=128M " \
+                                "root=/dev/nfs rw nfsroot=192.168.1.118:/prefix/ramfs " \
+                                "ip=192.168.1.150:192.168.1.118:192.168.1.1:255.255.255.0"
+#define CONFIG_INITRD_TAG       1
+#define CONFIG_IPADDR    192.168.1.150
+#define CONFIG_NETMASK   255.255.255.0
+#define CONFIG_SERVERIP  192.168.1.118
 
 /*
  * Static configuration when assigning fixed address
