@@ -1,0 +1,11 @@
+*.tar.bz2
+*.tar.gz
+busybox/busybox-1.20.2/
+e2fsprogs/e2fsprogs-1.42.6/
+libacl/acl-2.2.51/
+libattr/attr-2.4.46/
+lighttpd/lighttpd-1.4.32/
+lzo/lzo-2.06/
+mtd-utils/mtd-utils-1.5.0/
+zlib/zlib-1.2.7/
+
