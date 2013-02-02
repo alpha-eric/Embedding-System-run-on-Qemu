@@ -1,0 +1,7 @@
+qemu-system-arm -M versatilepb -kernel zImage -initrd rootfs.cpio.gz -serial stdio -append "root=/dev/ram0 console=ttyAMA0"
+qemu-system-arm -M versatilepb -kernel zImage -initrd rootfs.cpio.gz -nographic -append "root=/dev/ram0 console=ttyAMA0"
+sudo qemu-system-arm -M versatileab -kernel prefix/boot/u-boot.bin -net nic -net tap -nographic
+sudo qemu-system-arm -M versatilepb -kernel zImage -initrd rootfs.cpio.gz -nographic -append "console=ttyAMA0" -net nic -net tap,ifname=tap0,script=../qemu-ifup.sh
+
+mkimage -n 'uboot roofs' -A arm -O linux -T ramdisk -C gzip -d rootfs.cpio.gz urootfs.cpio.gz
+qemu-system-arm -M versatilepb -kernel zImage -mtdblock rootfs.jffs2.bin.gz -nographic -append "root=/dev/mtdblock0 console=ttyAMA0"
