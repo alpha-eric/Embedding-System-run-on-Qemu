@@ -1,0 +1,40 @@
+#!/bin/sh
+
+die() {
+	echo $@
+	exit 1
+}
+
+showUsage() {
+	die "$0 {start|stop}"
+}
+
+action=$1
+end=$2
+
+[ "$end" = "" ] && [ "$action" != "" ] || showUsage
+
+start() {
+	hwclock -s -u
+	echo "rc.sysinit start ok."
+}
+
+stop() {
+	#/etc/rc.d/init.d/upnp_av.sh stop
+	#hwclock -w -u
+	echo "rc.sysinit stop ok."
+}
+
+case $action in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+exit 0

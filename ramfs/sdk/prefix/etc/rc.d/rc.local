@@ -1,0 +1,38 @@
+#!/bin/sh
+
+die() {
+	echo $@
+	exit 1
+}
+
+showUsage() {
+	die "$0 {start|stop}"
+}
+
+action=$1
+end=$2
+
+[ "$end" = "" ] && [ "$action" != "" ] || showUsage
+
+start() {
+	echo "rc.local start ok."
+}
+
+stop() {
+	#addlog System is rebooting.
+	echo "rc.local stop ok."
+}
+
+case $action in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+exit 0

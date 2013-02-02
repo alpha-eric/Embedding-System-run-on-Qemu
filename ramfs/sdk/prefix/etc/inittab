@@ -1,0 +1,5 @@
+::sysinit:/etc/rc.d/rcS start
+::respawn:/bin/sh < /dev/ttyAMA0 2>&1 > /dev/ttyAMA0
+::restart:/sbin/init
+::ctrlaltdel:/sbin/shutdown -t3 -r now
+::shutdown:/etc/rc.d/rcK
