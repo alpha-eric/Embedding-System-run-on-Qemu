@@ -1,0 +1,15 @@
+etc/fstab
+etc/hostname
+etc/mdev.conf
+etc/profile
+etc/shadow
+etc/group
+etc/inittab
+etc/passwd
+etc/protocols
+etc/services
+etc/rc.d/rcK
+etc/rc.d/rc.local
+etc/rc.d/rcS
+etc/rc.d/rc.sysinit
+init
